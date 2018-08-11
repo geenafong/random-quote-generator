@@ -34,16 +34,16 @@ function getRandomQuote(array) {
 function printQuote(randomQuote) {
   //* calls the getRandomQuote function *//
   var randomQuote = getRandomQuote(quotes);
-  var stringOfQuoteProperties = "<p class='quote'>" + randomQuote.quote + "</p>" + "<p class='source'>" + randomQuote.source + "</p>"
-//* creates variables including html of how they are viewed on the page *//
+  //* creates a string of variables including html of how they are viewed on the page *//
+  var stringOfQuoteProperties = "<p class='quote'>" + randomQuote.quote + "</p>" + "<p class='source'>" + randomQuote.source 
   var year = "<span class = 'year'>" + randomQuote.year + "</span>";
-  //* makes an exception for those with a citation or year *//
+  //* makes an exception for those with a year *//
   if (randomQuote.hasOwnProperty('year')) {
-    stringOfQuoteProperties += year
+    stringOfQuoteProperties += year 
   }
   else {
-
   }
+  stringOfQuoteProperties += "</p>"
   document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
 }
 
